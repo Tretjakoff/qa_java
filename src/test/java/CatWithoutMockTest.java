@@ -20,4 +20,5 @@ public class CatWithoutMockTest {
     public void testGetFoodCat() throws Exception {
         assertEquals(List.of("Животные", "Птицы", "Рыба"), cat.getFood());
     }
+
 }

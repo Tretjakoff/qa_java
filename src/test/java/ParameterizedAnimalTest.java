@@ -7,9 +7,9 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class ParameterizedAnimalTest {
+
     public final String testAnimalKind;
     public final String testGetFood;
-
 
     public ParameterizedAnimalTest(String testAnimalKind, String testGetFood) {
         this.testAnimalKind = testAnimalKind;
@@ -26,18 +26,14 @@ public class ParameterizedAnimalTest {
     }
 
     @Test
-    public void shouldBeEquals() throws Exception {
+    public void shouldBeEquals() {
         Animal animal = new Animal();
-        if (testAnimalKind == "Травоядное" || testAnimalKind == "Хищник") {
+        try {
             String actual = String.valueOf(animal.getFood(testAnimalKind));
             assertEquals(testGetFood, actual);
-        } else {
-            try {
-                animal.getFood(testAnimalKind);
-            } catch (Exception exception) {
-                System.out.println(exception.getMessage());
-                assertEquals(testGetFood, exception.getMessage());
-            }
+        } catch (Exception exception) {
+            assertEquals(testGetFood, exception.getMessage());
         }
     }
+
 }

@@ -10,17 +10,17 @@ public class FelineWithoutMockTest {
     Feline feline = new Feline();
 
     @Test
-    public void testGetFamilyFeline(){
+    public void testGetFamilyFeline() {
         assertEquals("Кошачьи", feline.getFamily());
     }
 
     @Test
-    public void testGetKittensFeline(){
+    public void testGetKittensFeline() {
         assertEquals(1, feline.getKittens());
     }
 
     @Test
-    public void testGetManyKittensFeline(){
+    public void testGetManyKittensFeline() {
         assertEquals(5, feline.getKittens(5));
     }
 

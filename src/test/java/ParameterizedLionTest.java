@@ -8,9 +8,9 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class ParameterizedLionTest {
+
     public final String sexLion;
     public final String comparisonResult;
-
 
     public ParameterizedLionTest(String sexLion, String comparisonResult) {
         this.sexLion = sexLion;
@@ -27,19 +27,14 @@ public class ParameterizedLionTest {
     }
 
     @Test
-    public void shouldBeEquals() throws Exception {
-        if (sexLion == "Самец" || sexLion == "Самка") {
+    public void shouldBeEquals() {
+        try {
             Lion lion = new Lion(new Feline(), sexLion);
             String actual = String.valueOf(lion.doesHaveMane());
             assertEquals(comparisonResult, actual);
-        } else {
-            try {
-                Lion lion = new Lion(new Feline(), sexLion);
-                lion.doesHaveMane();
-            } catch (Exception ex) {
-                System.out.println(ex.getMessage());
-                assertEquals(comparisonResult, ex.getMessage());
-            }
+        } catch (Exception ex) {
+            assertEquals(comparisonResult, ex.getMessage());
         }
     }
+
 }
