@@ -1,3 +1,4 @@
+import com.example.Feline;
 import com.example.Lion;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,12 +29,12 @@ public class ParameterizedLionTest {
     @Test
     public void shouldBeEquals() throws Exception {
         if (sexLion == "Самец" || sexLion == "Самка") {
-            Lion lion = new Lion(sexLion);
+            Lion lion = new Lion(new Feline(), sexLion);
             String actual = String.valueOf(lion.doesHaveMane());
             assertEquals(comparisonResult, actual);
         } else {
             try {
-                Lion lion = new Lion(sexLion);
+                Lion lion = new Lion(new Feline(), sexLion);
                 lion.doesHaveMane();
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());

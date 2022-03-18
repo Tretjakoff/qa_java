@@ -6,7 +6,9 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class FelineWithoutMockTest {
+
     Feline feline = new Feline();
+
     @Test
     public void testGetFamilyFeline(){
         assertEquals("Кошачьи", feline.getFamily());
@@ -18,7 +20,13 @@ public class FelineWithoutMockTest {
     }
 
     @Test
+    public void testGetManyKittensFeline(){
+        assertEquals(5, feline.getKittens(5));
+    }
+
+    @Test
     public void testEatMeatFeline() throws Exception {
         assertEquals(List.of("Животные", "Птицы", "Рыба"), feline.eatMeat());
     }
+
 }

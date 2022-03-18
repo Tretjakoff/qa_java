@@ -1,3 +1,5 @@
+import com.example.Cat;
+import com.example.Feline;
 import com.example.Lion;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,12 +15,27 @@ import static org.junit.Assert.assertEquals;
 public class LionTest {
 
     @Mock
-    Lion lion;
+    Feline feline;
 
+    @Test
+    public void mockLion() throws Exception {
+        Lion lion = new Lion(feline, "Самец");
+        lion.getKittens();
+        Mockito.verify(feline).getKittens();
+    }
 
-//    @Test
-//    public void testMockGetFoodCat() throws Exception {
-//        lion.getFood("Хищник");
-//        Mockito.verify(lion).getFood("Хищник");
-//    }
+    @Test
+    public void mockLionGetFood() throws Exception {
+        Lion lion = new Lion(feline, "Самец");
+        lion.getFood();
+        Mockito.verify(feline).getFood("Хищник");
+    }
+
+    @Test
+    public void testMockGetFoodLion() throws Exception {
+        Lion lion = new Lion(feline, "Самка");
+        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        assertEquals(List.of("Животные", "Птицы", "Рыба"), lion.getFood());
+    }
+
 }

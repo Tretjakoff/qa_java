@@ -7,7 +7,8 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class CatWithoutMockTest {
-    Feline feline;
+
+    Feline feline = new Feline();
     Cat cat = new Cat(feline);
 
     @Test
