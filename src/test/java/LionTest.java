@@ -16,9 +16,9 @@ public class LionTest {
     Lion lion;
 
 
-    @Test
-    public void testMockGetFoodCat() throws Exception {
-        lion.getFood("Хищник");
-        Mockito.verify(lion).getFood("Хищник");
-    }
+//    @Test
+//    public void testMockGetFoodCat() throws Exception {
+//        lion.getFood("Хищник");
+//        Mockito.verify(lion).getFood("Хищник");
+//    }
 }
