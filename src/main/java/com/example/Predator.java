@@ -8,5 +8,6 @@ public interface Predator {
     String getFamily();
     int getKittens();
     int getKittens(int kittensCount);
+    List<String> getFood(String animalKind) throws Exception;
 
 }

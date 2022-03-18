@@ -31,6 +31,6 @@ public class Lion {
     }
 
     public List<String> getFood() throws Exception {
-        return predator.eatMeat();
+        return predator.getFood("Хищник");
     }
 }
