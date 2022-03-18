@@ -17,14 +17,22 @@ import static org.junit.Assert.assertEquals;
 public class FelineTest {
 
     @Mock
-    Feline feline;
+    Animal animal;
 
     @Test
     public void testGetFoodFeline() throws Exception {
-        feline.getFood("Хищник");
-        Mockito.verify(feline).getFood("Хищник");
-        feline.getKittens(1);
-        Mockito.verify(feline).getKittens(1);
+        Feline feline = new Feline();
+        System.out.println(feline.eatMeat());
+
+
+
+        assertEquals(List.of("Животные", "Птицы", "Рыба"), feline.getFood("Хищник"));
+        //Mockito.when(animal.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        assertEquals(List.of("Животные", "Птицы", "Рыба"), feline.getFood("Хищник"));
+
+    //Mockito.verify(feline).getFood("Хищник");
+        //feline.getKittens(1);
+        //Mockito.verify(feline).getKittens(1);
     }
 
 

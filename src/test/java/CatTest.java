@@ -16,13 +16,13 @@ public class CatTest extends Feline {
 
 
     @Mock
-    Cat cat;
-
+    Feline feline;
 
     @Test
+
     public void testMockGetFoodCat() throws Exception {
-        cat.getFood("Хищник");
-        cat.getFood("Хищник");
-        Mockito.verify(cat, Mockito.times(2)).getFood("Хищник");
+        Cat cat = new Cat(feline);
+        Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        assertEquals(List.of("Животные", "Птицы", "Рыба"), cat.getFood());
     }
 }

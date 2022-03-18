@@ -12,12 +12,11 @@ public class CatWithoutMockTest {
 
     @Test
     public void testGetSoundCat() {
-        System.out.println(cat.getSound());
         assertEquals("Мяу", cat.getSound());
     }
 
     @Test
     public void testGetFoodCat() throws Exception {
-        assertEquals(List.of("Животные", "Птицы", "Рыба"), cat.getFood("Хищник"));
+        assertEquals(List.of("Животные", "Птицы", "Рыба"), cat.getFood());
     }
 }
