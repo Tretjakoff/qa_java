@@ -26,7 +26,7 @@ public class ParameterizedAnimalTest {
     }
 
     @Test
-    public void shouldBeEquals() {
+    public void parameterizedAnimalWithException() {
         Animal animal = new Animal();
         try {
             String actual = String.valueOf(animal.getFood(testAnimalKind));

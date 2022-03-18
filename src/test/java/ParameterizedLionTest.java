@@ -27,7 +27,7 @@ public class ParameterizedLionTest {
     }
 
     @Test
-    public void shouldBeEquals() {
+    public void parameterizedLionWithException() {
         try {
             Lion lion = new Lion(new Feline(), sexLion);
             String actual = String.valueOf(lion.doesHaveMane());
